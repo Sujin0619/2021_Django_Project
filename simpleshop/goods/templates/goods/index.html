@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block product-list %}
+  {% for good in goods %}
+    <a class="product" href="#">
+    <img src={% get_static_prefix %}{{good.img_path}} width="225px"/>
+    <div class="product-name">{{good.name}}</div>
+    <div class="product-price">{{good.price}}</div>
+    </a>
+  {% endfor %}
+{% endblock product-list %}
